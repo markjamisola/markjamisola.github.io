@@ -3,7 +3,7 @@
 @import url('https://fonts.cdnfonts.com/css/do-futuristic');
 
 :root{
-    --header-height: 3.rem;
+    --header-height: 3rem;
 
     --hue: 240;
     --first-color: #5959c7;
@@ -61,6 +61,7 @@ body, input, textarea, button {
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
     background-color: #0d0d33;
+    color: var(--text-color);
 }
 
 body {
@@ -75,6 +76,8 @@ body.no-scroll {
 input, button, textarea {
     border: none;
     outline: none;
+    border-radius: 10px;
+    color: var(--text-color);
 }
 
 h1,h2 {
@@ -86,7 +89,7 @@ p {
     line-height: 130%;
 }
 
-/* ul { padding-left: 2rem} */
+
 ul {
     list-style: none;
     padding-left: 0;
@@ -96,18 +99,11 @@ a {
     text-decoration: none;
 }
 
-
-
-
-
-
-
 .grid {
     display: grid;
     gap: 1.5rem;
     overflow: hidden;
 }
-
 
 .section {
     padding-block: 5rem 2rem;
@@ -129,7 +125,7 @@ a {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    z-index: 10000; /* Make sure it's on top */
+    z-index: 10000; /* para sure naas top layer */
     display: flex;
     pointer-events: auto;
     overflow: hidden;
@@ -148,7 +144,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10001; /* Above the overlay */
+    z-index: 10001; /* nasa taas sa overlay */
     color: var(--body-color);
     padding: 0.2em 0.4em;
     font-size: 20vw;
@@ -267,11 +263,11 @@ a {
 }
 
 
-
+/* home */
 .home__scroll{
-    grid-column: 1/3;
+
     padding-bottom: 4rem;
-    padding-top: 4rem;
+    padding-top: 2rem;
 }
 
 .home__scroll {
@@ -282,15 +278,10 @@ a {
     justify-self: center;
  
 }
-.grid {
-
-    gap: 1.5rem;
-    overflow: hidden;
-}
 
 .iam, .home__scroll-text{
     font-family: var(--body-font );
-    color: var(--first-color-light);
+    color: var(--first-color-alt);
 }
 
 .home__scroll {
@@ -351,12 +342,7 @@ a {
     position: relative;
     font-size: var(--big-font-size);
     color: var(--text-color);
-    font-family: 'Planet N Compact Expanded', sans-serif;
-
-                                                
-}
-.typed {
-    font-family: 'DO Futuristic', sans-serif;
+    font-family: 'Planet N Compact Expanded', sans-serif;                                           
 }
 
 .home__profession::after {
@@ -370,6 +356,16 @@ a {
 }
 
 .iam{
+    color: var(--first-color-alt);
+}
+
+.social-links a {
+    color: var(--first-color-alt);
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
     color: var(--first-color-light);
 }
 
@@ -383,14 +379,12 @@ a {
     font-weight: var(--font-semi-bold);
     padding: 1.25rem 2rem;
     transition: background-color .4s; 
+    border-radius: 7px;
 }
 
 .button:hover {
     background-color: var(--first-color-alt);
 }
-
-
-
 
 /*project*/
 .project {
@@ -413,17 +407,20 @@ a {
     color: var(--text-color);
     transition: transform .5s;
     height: 100%;
+    border-radius: 10px;
 }
 
 .project__title{
     color: var(--first-color-alt);
     margin-bottom: .75rem;
+    font-family: 'Planet N Compact', sans-serif;
 }
 
 .project_description{
     margin-bottom: 1.5rem;
     text-align: justify;
     color: var(--text-color-light);
+    font: var(--body-font);
 }
 
 .project__link i {
@@ -488,13 +485,9 @@ a {
     font-family: 'Planet N Compact', sans-serif;
 }
 
-
-
 .about {
     row-gap: 3rem;
 }
-
-
 
 .about__description{
     margin-bottom: 2rem;
@@ -512,7 +505,7 @@ a {
     border-radius: 7%;
 }
 
- .edu::before {
+.edu::before {
     content: '';
     position: absolute;
     top: 0;
@@ -541,9 +534,8 @@ a {
     width: 100%;
 }
 
+
 /*education*/
-
-
 .ed__data {
     row-gap: 1rem;
 }
@@ -554,11 +546,11 @@ a {
 
 .ed_school{
     margin-bottom: .25rem;
-    color: var(--first-color-light);
+    color: var(--text-color);
 }
 
 .ed_course{
-    color: var(--first-color-light);
+    color: var(--text-color);
 }
 
 .ed__date{
@@ -587,7 +579,6 @@ a {
 }
 
 .skills__content{
-    grid-template-columns: repeat(3, max-content);
     justify-content: space-around;
     align-items: flex-end;
 }
@@ -699,28 +690,34 @@ a {
   }
   
 
-/*contact*/ 
+
+/*contact */
 .contact__container {
     row-gap: 4rem;
-}
-
-.contact__group, .contact__form {
-    gap: 1rem;
 }
 
 .contact__form {
     position: relative;
 }
 
-.contact__input {
+.contact__input{
     padding: 1.25rem;
     background-color: var(--container-color);
-    color: var(--title--color);
+    color: var(--text-color-alt);
     font-weight: var(--font-semi-bold);
+    border-color: var(--container-color);
 }
 
 .contact__input::placeholder{
     color: var(--text-color-light);
+}
+
+.form-control::placeholder{
+    color: var(--text-color);
+}
+.contact__input.form-control {
+    color: #ffffff !important; /* Override dark color with white */
+    background-color: var(--container-color) !important; /* Custom background */
 }
 
 .contact__area{
@@ -731,13 +728,12 @@ a {
 .contact__button{
     margin-top: 1rem;
     cursor: pointer;
+    width: 100%;
 }
 
 .contact__social {
-    grid-template-columns: repeat(3, max-content);
     justify-content: center;
     column-gap: 2rem;
-
 }
 
 .contact__social-link{
@@ -825,11 +821,12 @@ a {
     background-color: var(--container-color);
     display: inline-flex;
     padding: 6px;
-    color: var(--title-color);
+    color: var(--first-color-alt);
     font-size: 1.25rem;
     box-shadow: 0 4px 12px hsla(var(--hue), 30%, 8%, .3);
     z-index: var(--z-tooltip);
     transition: bottom .4s, transform .4s;
+    border-radius: 20px;
 }
 
 .scrollup:hover{
@@ -851,22 +848,9 @@ a {
 }
 
 /* breakpoints 
-/* small */
-
 /* medium */
 @media screen and (min-width: 300px){
 
- 
-
-    .contact__container
-    {
-        grid-template-columns: 350px;
-        justify-content: center;
-    }
-    
-    .home__image{
-        width: 250px
-    }
     .about__name{
         text-align: center;
         padding-bottom: 2rem;
@@ -888,8 +872,6 @@ a {
 /* large */
 
 @media screen and (min-width: 1150px){
-
-
     .section{
         padding-block: 7rem 5rem;
     }
@@ -900,7 +882,7 @@ a {
 
     .nav{
         height: calc(var(--header-height)+ 2rem);
-        padding: 1.5rem;
+        padding: 1rem;
     }
 
     .nav__toggle, .nav__close{
@@ -916,18 +898,9 @@ a {
         column-gap: 5rem;
     }
 
-
-    .about__container{
-        row-gap: 4rem;
-    }
-
     .about__title{
-
-        margin-bottom: 3.5rem;
-        
+        margin-bottom: 2rem;
     }
-
-
 
     .about__img{
         width: 320px;
@@ -935,10 +908,6 @@ a {
 
     .about__description{
         margin-bottom: 3rem;
-    }
-
-    .about__button{
-        width: initial;
     }
 
     .aboutcont {
@@ -960,26 +929,6 @@ a {
 
     .ed__date{
         font-size: var(--normal-font-size);
-
-    }
-
-    .contact__container{
-        grid-template-columns: 600px;
-    }
-
-    .contact__group{
-        grid-template-columns: repeat(2,1fr);
-    }
-    .contact__area{
-        height: 15rem;
-    }
-
-    .contact__button{
-        margin-top: 1.5rem;
-    }
-
-    .contact__message{
-        bottom: 4.5rem;
     }
 
     .footer__container{
@@ -987,6 +936,7 @@ a {
         grid-template-columns: repeat(2, max-content);
         justify-content: space-between;
     }
+
     .footer__links{
         column-gap: 4rem;
         order: 1;
@@ -995,6 +945,4 @@ a {
     .scrollup{
         right: 3rem;
     }
-
-
 }

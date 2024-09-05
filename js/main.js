@@ -1,23 +1,23 @@
-/*=============== SHOW MENU ===============*/
+//showie menuie
 const navMenu = document.getElementById('nav-menu'),
       navToggle = document.getElementById('nav-toggle'),
       navClose = document.getElementById('nav-close')
 
-/* Menu show */
+//ipa show ang menu
 if(navToggle){
     navToggle.addEventListener('click', () =>{
         navMenu.classList.add('show-menu')
     })
 }
 
-/* Menu hidden */
+//hidden ang menu
 if(navClose){
     navClose.addEventListener('click', () =>{
         navMenu.classList.remove('show-menu')
     })
 }
 
-/*=============== REMOVE MENU MOBILE ===============*/
+//remove menu sa mobile
 const navLink = document.querySelectorAll('.nav__link')
 
 const linkAction = () =>{
@@ -27,7 +27,7 @@ const linkAction = () =>{
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
-/*=============== CHANGE BACKGROUND HEADER ===============*/
+//para mo blur ang header
 const blurHeader = () =>{
     const header = document.getElementById('header')
     // Add a class if the bottom offset is greater than 50 of the viewport
@@ -38,7 +38,7 @@ window.addEventListener('scroll', blurHeader)
 
 
 
-/*=============== EMAIL JS ===============*/
+//for email js nga part
 const contactForm = document.getElementById('contact-form'),
       contactMessage = document.getElementById('contact-message')
     
@@ -63,7 +63,7 @@ const sendEmail = (e) => {
 
 contactForm.addEventListener('submit', sendEmail);
 
-
+//scroll up nga part
 const scrollUp = () =>{
 	const scrollUp = document.getElementById('scroll-up')
     // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
@@ -93,7 +93,7 @@ const scrollActive = () =>{
 window.addEventListener('scroll', scrollActive)
 
 
-//scroll reaveal
+//scroll reaveal nga part 
 
 const sr = ScrollReveal({
     origin: 'top',
@@ -104,13 +104,13 @@ const sr = ScrollReveal({
 
 sr.reveal('.home__data, .education ')
 sr.reveal('.home__img', {delay: 400})
-sr.reveal('.home__scroll', {delay: 4500})
+sr.reveal('.home__scroll,', {delay: 4500})
 sr.reveal('.project__card', {interval: 100})
 sr.reveal('.about__content,.skills',{origin: 'right'})
 sr.reveal('.about__img, .cert',{origin: 'left'})
 sr.reveal('.contact__container',{origin: 'bottom'})
-    
-//preloader
+
+//preloader nga part
 function startLoader() {
     let counterElement = document.querySelector(".counter");
     let overlayElement = document.querySelector(".overlay");
@@ -118,7 +118,7 @@ function startLoader() {
 
     function updateCounter() {
         if (currentValue === 100) {
-            // Trigger GSAP animations once the counter is 100
+            // e trigger niya ang GSAP animation pag ma 100 na
             triggerAnimations();
             return;
         }
@@ -150,8 +150,8 @@ function triggerAnimations() {
         },
         ease: "power4.inOut",
         onComplete: () => {
-            document.querySelector(".overlay").style.display = "none"; // Hide the overlay after animation
-            document.body.style.overflow = "auto"; // Re-enable scrolling
+            document.querySelector(".overlay").style.display = "none"; // e hide na dayon ang overlay 
+            document.body.style.overflow = "auto"; // kani para maka scroll na 
         }
     });
 
@@ -180,17 +180,17 @@ function triggerAnimations() {
 
 document.addEventListener("DOMContentLoaded", startLoader);
 
-// Assuming you show the preloader on page load
 window.addEventListener('lhome', function () {
-    // Remove preloader after everything is loaded
+    // hawaon ang preloader inig humana
     document.querySelector('.overlay').style.display = 'none';
     document.body.classList.remove('no-scroll');
 });
 
-// To show the preloader before page load or at a certain event:
+// e pakita muna ang preloader bago everything
 document.body.classList.add('no-scroll');
 
 
+// I am a student nga animation typing chuchu
 const selectTyped = document.querySelector('.home__profession');
 if (selectTyped) {
   let typed_strings = selectTyped.getAttribute('data-typed-items');
@@ -203,3 +203,5 @@ if (selectTyped) {
     backDelay: 2000
   });
 }
+
+
