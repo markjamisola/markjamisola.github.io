@@ -72,3 +72,41 @@ carousel.addEventListener("touchmove", dragging);
 
 document.addEventListener("mouseup", dragStop);
 carousel.addEventListener("touchend", dragStop);
+
+// Get the modal
+const modal = document.getElementById("imageModal");
+
+// Get the image inside the modal
+const modalImg = document.getElementById("modalImg");
+
+// Get all the images in the carousel
+const carouselImages = document.querySelectorAll(".carousel img");
+
+// Loop through all the images and add an event listener
+carouselImages.forEach(img => {
+  img.addEventListener("click", function() {
+    modal.style.display = "block";
+    modalImg.src = this.src; // Set the modal image source to the clicked image
+  });
+});
+
+// Get the <span> element that closes the modal
+const closeBtn = document.querySelector(".close");
+
+
+const closeModal = () => {
+    modal.style.display = "none";
+  };
+
+  closeBtn.addEventListener("click", closeModal);
+
+// Close modal when clicking outside the image
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    closeModal();
+  }
+});
+// When the user clicks on <span> (x), close the modal
+closeBtn.addEventListener("click", function() {
+  modal.style.display = "none";
+});
