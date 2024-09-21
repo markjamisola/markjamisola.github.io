@@ -827,13 +827,16 @@ a {
     color: var(--first-color-light);
 }
 
-.contact__message{
-    position:absolute;
-    left: 0;
+.contact__message {
+    position:relative;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: -2rem;
-    font-size: var(--small-font-size);
+    text-align: center; /* Ensures the text itself is centered */
+    font-size: var(--h3-font-size);
     font-weight: var(--font-semi-bold);
     color: var(--title-color);
+    padding-bottom: 3px;
 }
 
 /*footer*/ 
